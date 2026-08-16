@@ -1,0 +1,963 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ameen — Digital Growth Partner for Real Estate Professionals</title>
+<meta name="description" content="Lead generation, websites, and digital marketing built specifically for realtors. Get more leads, build your online presence, and win more clients.">
+<meta name="theme-color" content="#0A0D12">
+<meta property="og:title" content="Ameen — Digital Growth Partner for Real Estate Professionals">
+<meta property="og:description" content="Lead generation, websites, and digital marketing built specifically for realtors.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A0D12'/%3E%3Ctext x='50' y='69' font-size='58' font-family='Georgia,serif' fill='%23C6A15B' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg:#0A0D12;
+  --surface:#131822;
+  --surface-2:#1B2230;
+  --border:rgba(241,236,226,.09);
+  --border-strong:rgba(241,236,226,.16);
+  --ink:#F1ECE2;
+  --muted:#9BA3B4;
+  --gold:#C6A15B;
+  --gold-soft:rgba(198,161,91,.14);
+  --gold-dark:#8A6C34;
+  --wa:#25D366;
+  --wa-dark:#1DA851;
+  --wa-soft:rgba(37,211,102,.12);
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:28px;
+  --container:1180px;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --font-display:'Fraunces',serif;
+  --font-ui:'Space Grotesk',sans-serif;
+  --font-body:'Inter',sans-serif;
+}
+ 
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;background:none;border:none;color:inherit;cursor:pointer}
+.container{max-width:var(--container);margin:0 auto;padding:0 24px}
+.skip-link{position:absolute;left:-999px;top:0;background:var(--gold);color:var(--bg);padding:10px 16px;z-index:999;border-radius:0 0 8px 0}
+.skip-link:focus{left:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+ 
+h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+.icon{width:22px;height:22px;flex-shrink:0}
+ 
+/* ============ SHARED SECTION CHROME ============ */
+.section{padding:110px 0}
+.section.on-surface{background:var(--surface)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-ui);font-size:.78rem;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.section-head{max-width:680px;margin-bottom:56px}
+.section-head h2{font-size:clamp(1.9rem,1.4rem + 2vw,2.7rem);margin-bottom:16px}
+.section-head p{color:var(--muted);font-size:1.05rem;max-width:560px}
+.disclaimer{
+  font-family:var(--font-ui);font-size:.85rem;color:var(--muted);
+  border-left:2px solid var(--gold);padding-left:14px;margin-top:14px;max-width:520px;
+}
+ 
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 28px;border-radius:100px;font-family:var(--font-ui);
+  font-weight:600;font-size:.95rem;white-space:nowrap;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease),color .25s var(--ease);
+  cursor:pointer;border:1.5px solid transparent;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--gold);color:#151006}
+.btn-primary:hover{background:#D6B473;box-shadow:0 10px 30px -8px rgba(198,161,91,.55);transform:translateY(-2px)}
+.btn-outline-wa{background:transparent;border-color:var(--wa);color:var(--wa)}
+.btn-outline-wa:hover{background:var(--wa);color:#08210F;transform:translateY(-2px);box-shadow:0 10px 30px -8px rgba(37,211,102,.5)}
+.btn-solid-wa{background:var(--wa);color:#08210F}
+.btn-solid-wa:hover{background:var(--wa-dark);transform:translateY(-2px);box-shadow:0 12px 34px -8px rgba(37,211,102,.55)}
+.btn-block{width:100%}
+ 
+/* ============ HEADER / NAV ============ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:20px 0;transition:background .35s var(--ease),padding .35s var(--ease),border-color .35s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.site-header.scrolled{
+  background:rgba(10,13,18,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  padding:14px 0;border-bottom-color:var(--border);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:var(--font-display);font-size:1.35rem;font-weight:600;display:flex;align-items:baseline;gap:2px}
+.logo em{font-style:normal;color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:34px;font-family:var(--font-ui);font-size:.92rem;font-weight:500}
+.nav-links a{position:relative;color:var(--ink);opacity:.85;transition:opacity .2s}
+.nav-links a:hover{opacity:1}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--gold);transition:width .25s var(--ease)}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:18px}
+.nav-toggle{display:none;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid var(--border-strong);border-radius:10px}
+.nav-toggle .icon{width:20px;height:20px}
+.nav-toggle .icon-close{display:none}
+body.nav-open .nav-toggle .icon-menu{display:none}
+body.nav-open .nav-toggle .icon-close{display:block}
+ 
+/* ============ HERO ============ */
+.hero{
+  position:relative;overflow:hidden;
+  padding:170px 0 110px;
+  background-image:
+    linear-gradient(rgba(198,161,91,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(198,161,91,.07) 1px,transparent 1px);
+  background-size:46px 46px;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 60% 55% at 28% 24%,transparent 0%,var(--bg) 72%);
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;
+}
+.hero-copy h1{font-size:clamp(2.3rem,1.5rem + 3.4vw,4.3rem);margin-bottom:22px}
+.hero-copy h1 span{color:var(--gold);font-style:italic}
+.hero-sub{color:var(--muted);font-size:1.1rem;max-width:480px;margin-bottom:34px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:38px}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px 22px;font-family:var(--font-ui);font-size:.82rem;color:var(--muted)}
+.hero-pills span{position:relative;padding-left:16px}
+.hero-pills span::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:.7}
+ 
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;min-height:480px}
+.glow-blob{
+  position:absolute;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle,rgba(198,161,91,.32),transparent 70%);
+  filter:blur(30px);z-index:0;animation:drift 11s ease-in-out infinite alternate;
+}
+@keyframes drift{from{transform:translate(-10px,10px)}to{transform:translate(20px,-18px)}}
+ 
+.phone-mockup{
+  position:relative;z-index:1;width:290px;
+  background:linear-gradient(180deg,#1A2130,#0F1420);
+  border:1px solid var(--border-strong);border-radius:38px;
+  padding:14px 10px;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.02);
+}
+.phone-notch{width:80px;height:18px;background:#0A0D12;border-radius:0 0 14px 14px;margin:0 auto 10px}
+.phone-screen{background:#0B1119;border-radius:22px;overflow:hidden;min-height:390px;display:flex;flex-direction:column}
+.chat-header{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--surface-2);border-bottom:1px solid var(--border)}
+.chat-dot{width:34px;height:34px;border-radius:50%;background:var(--gold-soft);border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:var(--font-ui);font-weight:700;font-size:.8rem;flex-shrink:0}
+.chat-name{font-family:var(--font-ui);font-size:.86rem;font-weight:600}
+.chat-status{font-size:.72rem;color:var(--wa)}
+.chat-body{flex:1;padding:16px 12px;display:flex;flex-direction:column;gap:10px}
+.bubble,.bubble-typing{opacity:0;transform:translateY(10px) scale(.98);transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.bubble.visible,.bubble-typing.visible{opacity:1;transform:translateY(0) scale(1)}
+.bubble{max-width:82%;padding:10px 13px;border-radius:14px;font-size:.82rem;line-height:1.45}
+.bubble-in{align-self:flex-start;background:var(--surface-2);border-bottom-left-radius:4px}
+.bubble-out{align-self:flex-end;background:var(--wa);color:#08210F;border-bottom-right-radius:4px}
+.bubble-typing{align-self:flex-start;display:inline-flex;gap:4px;padding:11px 14px;background:var(--surface-2);border-radius:14px;border-bottom-left-radius:4px}
+.bubble-typing span{width:5px;height:5px;border-radius:50%;background:var(--muted);animation:typingBounce 1.2s infinite ease-in-out}
+.bubble-typing span:nth-child(2){animation-delay:.15s}
+.bubble-typing span:nth-child(3){animation-delay:.3s}
+@keyframes typingBounce{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+ 
+.lead-toast{
+  position:absolute;top:-14px;left:50%;transform:translate(-50%,-14px);z-index:2;
+  display:flex;align-items:center;gap:8px;background:var(--surface-2);
+  border:1px solid var(--border-strong);padding:10px 16px;border-radius:100px;
+  font-family:var(--font-ui);font-size:.78rem;white-space:nowrap;box-shadow:0 20px 40px -16px rgba(0,0,0,.6);
+  opacity:0;transition:opacity .45s var(--ease),transform .45s var(--ease);
+}
+.lead-toast.visible{opacity:1;transform:translate(-50%,0)}
+.lead-toast .dot{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 3px var(--wa-soft)}
+ 
+.scroll-cue{
+  position:absolute;left:50%;bottom:28px;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  font-family:var(--font-ui);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  z-index:1;
+}
+.scroll-cue .icon{width:16px;height:16px;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+ 
+/* ============ GRIDS / CARDS (shared) ============ */
+.grid{display:grid;gap:22px}
+.services-grid{grid-template-columns:repeat(4,1fr)}
+.portfolio-grid{grid-template-columns:repeat(3,1fr)}
+.testimonials-grid{grid-template-columns:repeat(3,1fr)}
+.projects-grid{grid-template-columns:repeat(3,1fr)}
+ 
+.card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:30px 26px;transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+.on-surface .card{background:var(--surface-2)}
+.card:hover{transform:translateY(-5px);border-color:var(--gold);box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
+ 
+/* stagger delays for direct children */
+.stagger>*:nth-child(1){transition-delay:0ms}
+.stagger>*:nth-child(2){transition-delay:70ms}
+.stagger>*:nth-child(3){transition-delay:140ms}
+.stagger>*:nth-child(4){transition-delay:210ms}
+.stagger>*:nth-child(5){transition-delay:280ms}
+.stagger>*:nth-child(6){transition-delay:350ms}
+.stagger>*:nth-child(7){transition-delay:420ms}
+.stagger>*:nth-child(8){transition-delay:490ms}
+ 
+/* ============ REVEAL ============ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+ 
+/* ============ SERVICES ============ */
+.service-card .icon-wrap{
+  width:48px;height:48px;border-radius:12px;background:var(--gold-soft);border:1px solid rgba(198,161,91,.3);
+  display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:20px;
+}
+.service-card h3{font-family:var(--font-ui);font-size:1.05rem;font-weight:600;margin-bottom:10px}
+.service-card p{color:var(--muted);font-size:.92rem}
+ 
+/* ============ PORTFOLIO ============ */
+.portfolio-card{padding:0;overflow:hidden}
+.portfolio-preview{
+  position:relative;height:160px;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(198,161,91,.35),transparent 55%),
+    linear-gradient(135deg,#1c2434,#0e1219);
+  display:flex;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--border);
+}
+.portfolio-preview .icon{width:38px;height:38px;color:var(--gold);opacity:.85}
+.browser-dots{position:absolute;top:14px;left:16px;display:flex;gap:6px}
+.browser-dots span{width:8px;height:8px;border-radius:50%;background:rgba(241,236,226,.18)}
+.badge-demo{
+  position:absolute;top:14px;right:16px;background:var(--bg);border:1px solid var(--gold);color:var(--gold);
+  font-family:var(--font-ui);font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 10px;border-radius:100px;
+}
+.portfolio-body{padding:24px 24px 26px}
+.portfolio-body h3{font-family:var(--font-ui);font-size:1.02rem;font-weight:600;margin-bottom:8px}
+.portfolio-body p{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px}
+.tag{
+  font-family:var(--font-ui);font-size:.72rem;color:var(--muted);
+  border:1px solid var(--border-strong);padding:4px 10px;border-radius:100px;
+}
+ 
+/* ============ TESTIMONIALS ============ */
+.testimonial-card{display:flex;flex-direction:column;gap:18px}
+.quote-mark{font-family:var(--font-display);font-size:2.4rem;color:var(--gold);line-height:1;font-style:italic}
+.testimonial-card p.quote{font-size:.98rem;color:var(--ink);opacity:.92}
+.testimonial-who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:6px}
+.avatar-initial{
+  width:40px;height:40px;border-radius:50%;background:var(--gold-soft);border:1px solid var(--gold);
+  color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--font-ui);font-weight:700;font-size:.85rem;flex-shrink:0;
+}
+.testimonial-who .name{font-family:var(--font-ui);font-size:.86rem;font-weight:600}
+.testimonial-who .role{font-size:.78rem;color:var(--muted)}
+ 
+/* ============ EXPERIENCE TIMELINE ============ */
+.timeline{position:relative;padding-left:36px;margin-bottom:60px}
+.timeline::before{content:"";position:absolute;left:15px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--gold),transparent 95%)}
+.timeline-item{position:relative;padding-bottom:44px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-marker{
+  position:absolute;left:-36px;top:0;width:32px;height:32px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--gold);color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+}
+.timeline-marker .icon{width:16px;height:16px}
+.timeline-content .role-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:6px}
+.timeline-content .role{font-family:var(--font-display);font-size:1.2rem;font-weight:600}
+.timeline-content .org{font-family:var(--font-ui);font-size:.85rem;color:var(--gold)}
+.timeline-content p{color:var(--muted);font-size:.94rem;max-width:600px;margin-bottom:12px}
+ 
+.education-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.edu-card{display:flex;gap:16px;align-items:flex-start}
+.edu-card .icon-wrap{
+  width:44px;height:44px;border-radius:10px;background:var(--gold-soft);border:1px solid rgba(198,161,91,.3);
+  display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0;
+}
+.edu-card h4{font-family:var(--font-ui);font-size:.96rem;font-weight:600;margin-bottom:4px}
+.edu-card p{color:var(--muted);font-size:.85rem}
+ 
+/* ============ PROJECTS ============ */
+.project-featured{
+  display:grid;grid-template-columns:.85fr 1.15fr;gap:0;
+  background:linear-gradient(135deg,var(--surface-2),var(--surface));
+  border:1px solid var(--gold);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:26px;
+}
+.project-featured-visual{
+  position:relative;padding:40px;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 30% 30%,rgba(198,161,91,.25),transparent 60%);
+  border-right:1px solid var(--border);
+}
+.project-featured-visual .icon{width:64px;height:64px;color:var(--gold)}
+.project-featured-body{padding:40px}
+.project-featured .kicker{font-family:var(--font-ui);font-size:.75rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.project-featured h3{font-size:clamp(1.4rem,1.2rem + 1vw,1.8rem);margin-bottom:14px}
+.project-featured p{color:var(--muted);font-size:.98rem;margin-bottom:18px;max-width:520px}
+ 
+.project-card h3{font-family:var(--font-ui);font-size:1rem;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.project-card h3 .icon{width:18px;height:18px;color:var(--gold)}
+.project-card p{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+ 
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:.55fr 1.45fr;gap:60px;align-items:center}
+.about-visual{display:flex;justify-content:center}
+.monogram{
+  width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,rgba(198,161,91,.35),var(--surface-2) 65%);
+  border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:5rem;color:var(--gold);position:relative;
+}
+.monogram::after{content:"";position:absolute;inset:-14px;border:1px dashed var(--border-strong);border-radius:50%}
+.about-copy p{color:var(--muted);font-size:1.05rem;margin-bottom:28px;max-width:640px}
+.about-copy .tag-row{margin-bottom:0}
+.about-copy .tag-row .tag{color:var(--ink);border-color:var(--border-strong)}
+ 
+/* ============ CONTACT ============ */
+.contact-card{
+  position:relative;text-align:center;max-width:760px;margin:0 auto;padding:70px 40px;
+  border:1px solid var(--border-strong);border-radius:var(--radius-lg);
+  background:radial-gradient(circle at 50% 0%,rgba(198,161,91,.14),transparent 60%);
+}
+.contact-card .eyebrow{justify-content:center}
+.contact-card h2{font-size:clamp(1.6rem,1.2rem + 2vw,2.3rem);max-width:600px;margin:0 auto 14px}
+.contact-emph{font-family:var(--font-display);font-style:italic;color:var(--gold);font-size:clamp(1.8rem,1.4rem + 2vw,2.6rem);margin-bottom:34px}
+.contact-meta{margin-top:22px;color:var(--muted);font-family:var(--font-ui);font-size:.88rem;display:flex;flex-direction:column;gap:6px}
+.contact-meta .phone{color:var(--ink);letter-spacing:.03em}
+ 
+/* ============ FOOTER ============ */
+.site-footer{padding:64px 0 28px;border-top:1px solid var(--border)}
+.footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;margin-bottom:40px}
+.footer-brand .logo{margin-bottom:10px}
+.footer-brand p{color:var(--muted);font-size:.9rem;max-width:260px}
+.footer-links{display:flex;flex-direction:column;gap:10px;font-family:var(--font-ui);font-size:.9rem}
+.footer-links a{color:var(--muted);transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-contact{display:flex;flex-direction:column;gap:12px}
+.footer-contact a{display:flex;align-items:center;gap:10px;font-family:var(--font-ui);font-size:.9rem;color:var(--muted);transition:color .2s}
+.footer-contact a:hover{color:var(--wa)}
+.footer-contact .icon{width:18px;height:18px}
+.footer-bottom{
+  padding-top:24px;border-top:1px solid var(--border);
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
+  font-family:var(--font-ui);font-size:.8rem;color:var(--muted);
+}
+ 
+/* ============ RESPONSIVE ============ */
+@media (max-width:980px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .portfolio-grid,.testimonials-grid,.projects-grid{grid-template-columns:repeat(2,1fr)}
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-copy{order:1}
+  .hero-sub,.hero-pills{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-visual{order:2;min-height:auto;padding-top:30px}
+  .project-featured{grid-template-columns:1fr}
+  .project-featured-visual{border-right:none;border-bottom:1px solid var(--border);padding:34px}
+  .about-grid{grid-template-columns:1fr;text-align:center;gap:36px}
+  .about-copy p{margin-left:auto;margin-right:auto}
+  .about-copy .tag-row{justify-content:center}
+}
+@media (max-width:760px){
+  .section{padding:80px 0}
+  .nav-links{
+    position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;
+    background:var(--surface);border-left:1px solid var(--border);
+    flex-direction:column;justify-content:center;align-items:flex-start;gap:26px;
+    padding:40px;transform:translateX(100%);transition:transform .4s var(--ease);
+    font-size:1.05rem;
+  }
+  body.nav-open .nav-links{transform:translateX(0)}
+  .nav-links .nav-wa{margin-top:10px}
+  .nav-toggle{display:flex}
+  .services-grid,.portfolio-grid,.testimonials-grid,.projects-grid{grid-template-columns:1fr}
+  .education-row{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column}
+  .contact-card{padding:48px 24px}
+  .hero{padding-top:140px}
+}
+ 
+/* ============ MOTION / A11Y ============ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+ 
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a href="#home" class="logo">Ameen<em>.</em></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <a class="btn btn-outline-wa nav-wa" data-wa-msg="Hi Ameen, I have a question about your services.">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.1 8.1 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1s-.6.8-.8 1c-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+          WhatsApp
+        </a>
+      </li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <svg class="icon icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      <svg class="icon icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+    </button>
+  </div>
+</header>
+ 
+<main id="main">
+ 
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">Digital Growth for Real Estate Professionals </p>
+      ,<p class="eyebrow">(Website in underdevelopment now, will be live soon)</p>
+      <h1>Helping realtors get more <span>leads</span>, build their online <span>presence</span> &amp; win more <span>clients</span>.</h1>
+      <p class="hero-sub">I'm Ameen — a software developer and digital solutions specialist focused on one thing: giving real estate agents the digital groundwork to grow. Lead generation, websites, and the systems that turn strangers into clients.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" data-wa-msg="Hi Ameen, I'd like to talk about working together on my real estate business.">
+          Work With Me
+          <svg class="icon" style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="8 7 17 7 17 16"/></svg>
+        </a>
+        <a class="btn btn-outline-wa" data-wa-msg="Hi Ameen, I have a question about your services.">
+          <svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.1 8.1 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1s-.6.8-.8 1c-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+          WhatsApp Me
+        </a>
+      </div>
+      <div class="hero-pills">
+        <span>Lead Generation</span>
+        <span>Web Development</span>
+        <span>Social Media</span>
+        <span>CRM Setup</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="glow-blob" aria-hidden="true"></div>
+      <div class="lead-toast" id="leadToast" aria-hidden="true">
+        <span class="dot"></span> New lead captured from website
+      </div>
+      <div class="phone-mockup" aria-hidden="true">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="chat-header">
+            <span class="chat-dot">RE</span>
+            <div>
+              <p class="chat-name">New Inquiry</p>
+              <p class="chat-status">Online</p>
+            </div>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div class="bubble bubble-in" data-step="1">Hi! Saw your listing for the DHA Phase 6 house 🏡 Is it still available?</div>
+            <div class="bubble-typing" data-step="2"><span></span><span></span><span></span></div>
+            <div class="bubble bubble-out" data-step="3">Yes, still available! Want to schedule a viewing this week?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#services" class="scroll-cue">
+    Scroll
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</section>
+ 
+<!-- ===== SERVICES ===== -->
+<section class="section on-surface" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Services</p>
+      <h2>Everything your real estate business needs online</h2>
+      <p>From your first lead to your fifth closing this month — the digital groundwork, handled.</p>
+    </div>
+    <div class="grid services-grid stagger">
+ 
+      <div class="card service-card reveal">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V10"/><path d="M10 21v-6h4v6"/></svg></div>
+        <h3>Real Estate Lead Generation</h3>
+        <p>Targeted campaigns that fill your pipeline with people who are actually ready to talk.</p>
+      </div>
+ 
+      <div class="card service-card reveal">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.2l1.3 4.6-2 1.6a12 12 0 0 0 6.3 6.3l1.6-2 4.6 1.3V19a2 2 0 0 1-2.2 2A16 16 0 0 1 3 5.2 2 2 0 0 1 5 4Z"/></svg></div>
+        <h3>Cold Calling &amp; Appointment Setting</h3>
+        <p>Outreach and follow-up handled for you, so your calendar fills with qualified viewings.</p>
+      </div>
+ 
+      <div class="card service-card reveal">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><circle cx="17" cy="8.5" r="2.4"/><path d="M15.5 14.3c2.6.3 4.5 2.6 4.5 5.7"/></svg></div>
+        <h3>Social Media Management</h3>
+        <p>Consistent, on-brand content that keeps your listings — and your name — in front of buyers.</p>
+      </div>
+ 
+      <div class="card service-card reveal">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 16.5V20"/><path d="M9.5 8 7 11l2.5 3M14.5 8 17 11l-2.5 3"/></svg></div>
+        <h3>Real Estate Website Development</h3>
+        <p>Fast, professional websites built to showcase listings and convert visitors into inquiries.</p>
+      </div>
+ 
+      <div class="card service-card reveal">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M3.5 9h17"/><path d="M9 9v11.5"/></svg></div>
+        <h3>Landing Pages</h3>
+        <p>Focused, high-converting pages for individual listings, campaigns, or open houses.</p>
+      </div>
+ 
+      <div class="card service-card reveal">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5V12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V5.5"/><path d="M4.5 12v6.5c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V12"/></svg></div>
+        <h3>CRM &amp; Lead Management</h3>
+        <p>A simple system to track every lead from first message to closed deal, so nothing slips.</p>
+      </div>
+ 
+      <div class="card service-card reveal">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5v3a1 1 0 0 0 1 1h2l1.2 4.6a1 1 0 0 0 1 .75H10l-.6-5.35"/><path d="M6 10.5 16 6v13l-10-4.5v-4Z"/><path d="M18 9.5c1 .8 1 4.2 0 5"/></svg></div>
+        <h3>Digital Marketing Support</h3>
+        <p>Ad support, content strategy, and campaign management to keep your pipeline full.</p>
+      </div>
+ 
+      <div class="card service-card reveal">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 4.7L4 16.3V20h3.7l5.3-5.3a4 4 0 0 0 4.7-5.4l-2.8 2.8-2-2 2.8-2.8Z"/></svg></div>
+        <h3>Website Maintenance</h3>
+        <p>Ongoing updates, fixes, and improvements — so your site keeps working long after launch.</p>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== PORTFOLIO / DEMO WORK ===== -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Sample Work</p>
+      <h2>A look at what I can build</h2>
+      <p class="disclaimer">These are demo projects built to show design and development style — not live client work. Every project below is clearly labeled.</p>
+    </div>
+    <div class="grid portfolio-grid stagger">
+ 
+      <div class="card portfolio-card reveal">
+        <div class="portfolio-preview">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <span class="badge-demo">Demo Project</span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V10"/></svg>
+        </div>
+        <div class="portfolio-body">
+          <h3>Modern Realtor Website</h3>
+          <p>A clean, conversion-focused concept for an individual agent — listings, bio, and contact in one experience.</p>
+          <div class="tag-row"><span class="tag">Web Design</span><span class="tag">Realtor Branding</span></div>
+        </div>
+      </div>
+ 
+      <div class="card portfolio-card reveal">
+        <div class="portfolio-preview">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <span class="badge-demo">Demo Project</span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M3.5 9h17"/></svg>
+        </div>
+        <div class="portfolio-body">
+          <h3>Luxury Property Landing Page</h3>
+          <p>A single-property page built to sell one home: bold imagery placement, gallery, and a direct inquiry form.</p>
+          <div class="tag-row"><span class="tag">Landing Page</span><span class="tag">Luxury Real Estate</span></div>
+        </div>
+      </div>
+ 
+      <div class="card portfolio-card reveal">
+        <div class="portfolio-preview">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <span class="badge-demo">Demo Project</span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.2l1.3 4.6-2 1.6a12 12 0 0 0 6.3 6.3l1.6-2 4.6 1.3V19a2 2 0 0 1-2.2 2A16 16 0 0 1 3 5.2 2 2 0 0 1 5 4Z"/></svg>
+        </div>
+        <div class="portfolio-body">
+          <h3>Real Estate Lead Generation Website</h3>
+          <p>A lead-first concept built around one goal: turning visitors into booked calls and WhatsApp chats.</p>
+          <div class="tag-row"><span class="tag">Lead Gen</span><span class="tag">Conversion Design</span></div>
+        </div>
+      </div>
+ 
+      <div class="card portfolio-card reveal">
+        <div class="portfolio-preview">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <span class="badge-demo">Demo Project</span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5V12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8V5.5"/></svg>
+        </div>
+        <div class="portfolio-body">
+          <h3>Property Listing Website</h3>
+          <p>A searchable, filterable listings concept for agencies managing multiple properties at once.</p>
+          <div class="tag-row"><span class="tag">Listings</span><span class="tag">Web App</span></div>
+        </div>
+      </div>
+ 
+      <div class="card portfolio-card reveal">
+        <div class="portfolio-preview">
+          <div class="browser-dots"><span></span><span></span><span></span></div>
+          <span class="badge-demo">Demo Project</span>
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c0-3.6 3.1-6.5 7.5-6.5s7.5 2.9 7.5 6.5"/></svg>
+        </div>
+        <div class="portfolio-body">
+          <h3>Real Estate Agent Personal Brand Website</h3>
+          <p>A personal-brand concept for an agent who wants to stand out — story, credentials, and testimonials up front.</p>
+          <div class="tag-row"><span class="tag">Personal Brand</span><span class="tag">Portfolio</span></div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section on-surface" id="testimonials">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Sample Testimonials</p>
+      <h2>What clients could say</h2>
+      <p class="disclaimer">Written to illustrate the kind of feedback this work aims for. These are not quotes from real clients.</p>
+    </div>
+    <div class="grid testimonials-grid stagger">
+ 
+      <div class="card testimonial-card reveal">
+        <span class="quote-mark">"</span>
+        <p class="quote">Working with Ameen took the guesswork out of getting leads online. My WhatsApp hasn't stopped buzzing with real inquiries.</p>
+        <div class="testimonial-who">
+          <div class="avatar-initial">IR</div>
+          <div><p class="name">Independent Realtor</p><p class="role">Sample Testimonial</p></div>
+        </div>
+      </div>
+ 
+      <div class="card testimonial-card reveal">
+        <span class="quote-mark">"</span>
+        <p class="quote">The website he built finally looks like the agency we actually are — clients comment on it before we even bring it up.</p>
+        <div class="testimonial-who">
+          <div class="avatar-initial">AO</div>
+          <div><p class="name">Real Estate Agency Owner</p><p class="role">Sample Testimonial</p></div>
+        </div>
+      </div>
+ 
+      <div class="card testimonial-card reveal">
+        <span class="quote-mark">"</span>
+        <p class="quote">I had no online presence before this. Now I have a site, consistent social posts, and an actual system for following up on leads.</p>
+        <div class="testimonial-who">
+          <div class="avatar-initial">NA</div>
+          <div><p class="name">New Agent, First Year</p><p class="role">Sample Testimonial</p></div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== EXPERIENCE ===== -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Experience</p>
+      <h2>Where this actually comes from</h2>
+      <p>Real hands-on work in real estate, sales, and IT — not just theory.</p>
+    </div>
+ 
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12" rx="1.5"/><path d="M8 7.5V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1.5"/></svg></div>
+        <div class="timeline-content">
+          <div class="role-row"><span class="role">Virtual Assistant</span><span class="org">NSOL BPO</span></div>
+          <p>Directly responsible for real estate lead generation, social media management, and realtor website development — the exact groundwork this business is built on.</p>
+        </div>
+      </div>
+ 
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12" rx="1.5"/><path d="M8 7.5V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1.5"/></svg></div>
+        <div class="timeline-content">
+          <div class="role-row"><span class="role">Assistant IT Manager</span><span class="org">FAST Practice Innovations</span></div>
+          <p>Promoted from Customer Service Representative on the DME Campaign — two years of closing experience and a Top Sales Performer title — into managing client and sales data in MongoDB and supporting customers directly.</p>
+        </div>
+      </div>
+ 
+      <div class="timeline-item reveal">
+        <div class="timeline-marker"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M4.5 20c0-3.6 3.1-6.5 7.5-6.5s7.5 2.9 7.5 6.5"/></svg></div>
+        <div class="timeline-content">
+          <div class="role-row"><span class="role">Freelance Graphic Design &amp; Digital Services</span></div>
+          <p>Independent design and digital work — including social media management for WrapLab, a local F&amp;B brand, plus document design for individual clients.</p>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="education-row">
+      <div class="edu-card reveal">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9 12 4l10 5-10 5-10-5Z"/><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg></div>
+        <div>
+          <h4>BS Computer Science — NUML Islamabad</h4>
+          <p>Final-year student building a foundation in software development, AI, and systems design.</p>
+        </div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9 12 4l10 5-10 5-10-5Z"/><path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5"/></svg></div>
+        <div>
+          <h4>Amal Academy Career Prep Fellowship</h4>
+          <p>Selected fellowship focused on professional and career-readiness skills.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== PROJECTS ===== -->
+<section class="section on-surface" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Selected Projects</p>
+      <h2>Things I've built</h2>
+      <p>A mix of AI, web development, and real-world problem solving.</p>
+    </div>
+ 
+    <div class="project-featured reveal">
+      <div class="project-featured-visual">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="12" rx="1.5"/><path d="M9 21h6M12 15v6"/><path d="m9.5 6.5 2 2 3-3.5"/></svg>
+      </div>
+      <div class="project-featured-body">
+        <p class="kicker">Final Year Project</p>
+        <h3>MPRSS — Malware Prediction &amp; Risk Scoring System</h3>
+        <p>An AI-powered Android malware detection system combining static and dynamic analysis with machine learning and Explainable AI — so the model's decisions are interpretable, not a black box.</p>
+        <div class="tag-row"><span class="tag">Android Security</span><span class="tag">Machine Learning</span><span class="tag">Explainable AI</span></div>
+      </div>
+    </div>
+ 
+    <div class="grid projects-grid stagger">
+      <div class="card project-card reveal">
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/><path d="M2.5 3h2.4l2.2 11.6a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L20.5 7H6"/></svg>E-commerce Website</h3>
+        <p>A full-featured online store concept covering product browsing, cart, and checkout flow.</p>
+        <div class="tag-row"><span class="tag">Web Development</span><span class="tag">E-commerce</span></div>
+      </div>
+      <div class="card project-card reveal">
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M7.5 8.5h9M7.5 12h9M7.5 15.5h5.5"/></svg>Blog Website</h3>
+        <p>A clean, content-first blogging platform built for readability and easy publishing.</p>
+        <div class="tag-row"><span class="tag">Web Development</span><span class="tag">CMS</span></div>
+      </div>
+      <div class="card project-card reveal">
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 21C7 17.5 4 14 4 10a7 7 0 0 1 14 0c0 4-3 7.5-7 11Z"/><circle cx="11" cy="10" r="2.3"/></svg>Lost &amp; Found Campus Portal</h3>
+        <p>A portal for NUML students to report and reclaim lost items on campus.</p>
+        <div class="tag-row"><span class="tag">Web App</span><span class="tag">Campus Tool</span></div>
+      </div>
+      <div class="card project-card reveal">
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 4l8 7.5"/><path d="M6 10v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V10"/></svg>Real Estate Websites</h3>
+        <p>Multiple realtor-focused website builds — see the Sample Work section above for details.</p>
+        <div class="tag-row"><span class="tag">Real Estate</span><span class="tag">Web Development</span></div>
+      </div>
+      <div class="card project-card reveal">
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg>CareerPilot</h3>
+        <p>A career-guidance web application built to help students navigate career decisions.</p>
+        <div class="tag-row"><span class="tag">Web App</span><span class="tag">Career Tools</span></div>
+      </div>
+      <div class="card project-card reveal">
+        <h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17M3.5 12h17"/></svg>Other Web Development Work</h3>
+        <p>Additional smaller builds and client projects across different industries.</p>
+        <div class="tag-row"><span class="tag">Web Development</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <div class="monogram">A</div>
+    </div>
+    <div class="about-copy reveal">
+      <p class="eyebrow">About</p>
+      <h2>Software Developer + Digital Solutions Specialist</h2>
+      <p>I'm Ameen, a Computer Science student and freelance developer based in Islamabad, with a specific focus: helping real estate professionals build the digital side of their business. That means websites that actually convert, social media that stays consistent, and lead generation that doesn't stop once a campaign ends. It's a mix of technical skill — from AI and machine learning projects to full web builds — and real hands-on experience actually doing real estate lead generation and social media management, not just building for it in theory.</p>
+      <div class="tag-row">
+        <span class="tag">HTML / CSS / JS</span>
+        <span class="tag">Web Development</span>
+        <span class="tag">Lead Generation</span>
+        <span class="tag">Social Media Management</span>
+        <span class="tag">UI / UX</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">CRM Systems</span>
+        <span class="tag">Digital Marketing</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ===== CONTACT ===== -->
+<section class="section on-surface" id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <p class="eyebrow">Get In Touch</p>
+      <h2>Have a real estate business that needs more leads or a better online presence?</h2>
+      <p class="contact-emph">Let's talk.</p>
+      <a class="btn btn-solid-wa" data-wa-msg="Hi Ameen, I saw your website and would like to get started.">
+        <svg class="icon" style="width:18px;height:18px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.1 8.1 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1s-.6.8-.8 1c-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+        Message Me on WhatsApp
+      </a>
+      <div class="contact-meta">
+        <span class="phone">+92 327 5450926</span>
+        <span>Based in Islamabad, Pakistan · Available for remote work worldwide</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+</main>
+ 
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="logo">Ameen<em>.</em></p>
+        <p>Digital growth partner for real estate professionals — leads, websites, and online presence, handled.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-contact">
+        <a data-wa-msg="Hi Ameen, I have a question about your services.">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.1 8.1 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.6.1s-.6.8-.8 1c-.1.2-.3.2-.5.1-.2-.1-1-.4-2-1.2-.7-.6-1.2-1.4-1.4-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.1-.4-.2Z"/></svg>
+          +92 327 5450926
+        </a>
+        <a href="#" onclick="return false" style="opacity:.5;cursor:default" aria-label="Add your Instagram link here">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor" stroke="none"/></svg>
+          Instagram — add your link
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Ameen. All rights reserved.</p>
+      <p>Built with HTML, CSS &amp; JavaScript.</p>
+    </div>
+  </div>
+</footer>
+ 
+<script>
+(function(){
+  "use strict";
+  var WA_NUMBER = "923275450926";
+ 
+  function buildWhatsAppLinks(){
+    document.querySelectorAll("[data-wa-msg]").forEach(function(el){
+      var msg = el.getAttribute("data-wa-msg") || "";
+      el.setAttribute("href", "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(msg));
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
+    });
+  }
+ 
+  function initNav(){
+    var toggle = document.getElementById("navToggle");
+    var links = document.getElementById("navLinks");
+    if(!toggle || !links) return;
+    toggle.addEventListener("click", function(){
+      var open = document.body.classList.toggle("nav-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    links.querySelectorAll("a").forEach(function(a){
+      a.addEventListener("click", function(){
+        document.body.classList.remove("nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+ 
+  function initHeaderScroll(){
+    var header = document.getElementById("siteHeader");
+    if(!header) return;
+    function onScroll(){
+      header.classList.toggle("scrolled", window.scrollY > 30);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+ 
+  function initReveal(){
+    var items = document.querySelectorAll(".reveal");
+    if(!items.length) return;
+    if(!("IntersectionObserver" in window)){
+      items.forEach(function(i){ i.classList.add("visible"); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    items.forEach(function(i){ io.observe(i); });
+  }
+ 
+  function initHeroChat(){
+    var steps = document.querySelectorAll("#chatBody [data-step]");
+    var toast = document.getElementById("leadToast");
+    if(!steps.length) return;
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(reduced){
+      steps.forEach(function(s){ s.classList.add("visible"); });
+      if(toast) toast.classList.add("visible");
+      return;
+    }
+    var gaps = [1300, 900, 1500];
+    function run(){
+      steps.forEach(function(s){ s.classList.remove("visible"); });
+      if(toast) toast.classList.remove("visible");
+      var t = 500;
+      steps.forEach(function(s, i){
+        setTimeout(function(){ s.classList.add("visible"); }, t);
+        t += gaps[i] || 1200;
+      });
+      setTimeout(function(){ if(toast) toast.classList.add("visible"); }, t + 200);
+      t += 4200;
+      setTimeout(run, t);
+    }
+    run();
+  }
+ 
+  function initYear(){
+    var y = document.getElementById("year");
+    if(y) y.textContent = new Date().getFullYear();
+  }
+ 
+  document.addEventListener("DOMContentLoaded", function(){
+    buildWhatsAppLinks();
+    initNav();
+    initHeaderScroll();
+    initReveal();
+    initHeroChat();
+    initYear();
+  });
+})();
+</script>
+</body>
+</html>
+ 
